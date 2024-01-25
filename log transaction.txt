@@ -1,0 +1,17 @@
+log transaction
+#get users input for 
+#when it took place 
+#how much money and 
+#category of purchase 
+#store in a text file 
+
+
+store location user input as string 
+store cost user input as float  
+store category  user input as string 
+
+create a text file named log transaction 
+
+create classe value named location to store location
+create classe value named cost to store cost
+create classe value named category to store category
