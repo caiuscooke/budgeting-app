@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from get_input import get_user_input
+
 
 class Transaction:
     def __init__(self, category: str, amount: float, time: str, date: str, product: list):
@@ -16,7 +18,6 @@ class Transaction:
                 f"\n{self.category} {self.amount} {self.time} {self.date} {self.product}")
 
 
-# create a way to view the trans text file
 def view():
     with open("trans.txt", "r") as file:
         lines = file.readlines()
@@ -28,37 +29,11 @@ def display_transactions():
     print("Input two digits for the day, month, and year.")
     print("Ex) 07 22 20 for July 22nd, 2000")
 
-    """
-    Find each line that needs to change. Aka line 37
-    will need the changes in the comments.
-    """
-    # FROM HERE
-    # variable name has to change and input string has to change
-    day = input("Day: ")
-    while True:
-        try:
-            int(day)
-            break
-        except:
-            print("Make sure you only type numbers.")
-            day = input("Day: ")  #
+    day = get_user_input("Day")
+    month = get_user_input("Month")
+    year = get_user_input("Year")
 
-    while len(day) != 2:  #
-        print("Enter two digits for the day.")
-        day = input("Day: ")  #
-    # TO HERE
-
-    month = input("Month: ")
-    while len(month) != 2:
-        print("Enter two digits for the month.")
-        month = input("Month: ")
-
-    year = input("Year: ")
-    while len(year) != 2:
-        print("Enter two digits for the year.")
-        year = input("Year: ")
-
-    date_string = f"{day}:{month}:{year}"
+    date_string = f"{month}:{day}:{year}"
     user_input_as_date = datetime.strptime(date_string, "%m:%d:%y")
 
     with open('trans.txt', 'r') as file:
@@ -70,6 +45,3 @@ def display_transactions():
 
             if user_input_as_date == txt_file_as_date:
                 print(transaction)
-
-
-display_transactions()

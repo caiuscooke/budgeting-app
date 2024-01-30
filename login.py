@@ -1,4 +1,4 @@
-class login:
+class Login:
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -9,4 +9,6 @@ class login:
                 f"\n{self.username} {self.password}")
 
 
-file = open("login.txt", "w")
+username = input("Type in a username")
+new_user = Login("caius_cooke", "12345678")
+new_user.save()
