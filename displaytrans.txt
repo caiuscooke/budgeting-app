@@ -1,0 +1,21 @@
+input transaction date 
+read text file 
+make a list of each class iteam 
+go over each item in list 
+split each item into a list 
+store 3rd item transaction date 
+if user input = the transaction date 
+display list 
+
+def display_transactions():
+    transaction_date = input()
+    with open('trans.txt', 'r') as file:
+        transactions = file.readlines()
+        for each in transactions:
+            line_split = each.split()
+            date = line_split[3]
+            if transaction_date == date:
+                print(each)
+
+
+display_transactions()

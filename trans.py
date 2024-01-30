@@ -41,11 +41,11 @@ def display_transactions():
             break
         except:
             print("Make sure you only type numbers.")
-            day = input("Day: ")
+            day = input("Day: ")  #
 
-    while len(day) != 2:
+    while len(day) != 2:  #
         print("Enter two digits for the day.")
-        day = input("Day: ")
+        day = input("Day: ")  #
     # TO HERE
 
     month = input("Month: ")

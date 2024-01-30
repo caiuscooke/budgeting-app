@@ -1,0 +1,14 @@
+log in system for budget app:  
+
+username input 
+password input
+
+
+make username & password txt.file
+add username & password to  txt.file
+store correct password & username
+go over each iteam in password & username
+if user input = password & username
+display welcome back 
+else you have 3 tries 
+
