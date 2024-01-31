@@ -1,0 +1,5 @@
+user enter month
+user enter day
+user enter year
+use previous inputs to convert to datetime object
+if multiple transactions at that date
