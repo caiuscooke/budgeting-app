@@ -1,6 +1,7 @@
 from datetime import datetime
 
-from get_input import get_user_input
+from get_input import convert_input_to_datetime
+from file_manipulation import get_txt_lines
 
 
 class Transaction:
@@ -26,22 +27,24 @@ def view():
 
 
 def display_transactions():
-    print("Input two digits for the day, month, and year.")
-    print("Ex) 07 22 20 for July 22nd, 2000")
+    user_input_as_date = convert_input_to_datetime()
+    transaction = get_txt_lines(user_input_as_date)
 
-    day = get_user_input("Day")
-    month = get_user_input("Month")
-    year = get_user_input("Year")
+    print(transaction)
 
-    date_string = f"{month}:{day}:{year}"
-    user_input_as_date = datetime.strptime(date_string, "%m:%d:%y")
 
-    with open('trans.txt', 'r') as file:
-        transactions = file.readlines()
-        for transaction in transactions:
-            line_split = transaction.split()
-            date = line_split[3]  # string date from the txt file
-            txt_file_as_date = datetime.strptime(date, "%m:%d:%Y")
+def delete_transaction():
+    user_input_as_date = convert_input_to_datetime()
+    transaction = get_txt_lines(user_input_as_date)
 
-            if user_input_as_date == txt_file_as_date:
-                print(transaction)
+    print(f"Is {transaction} the transaction you'd like to delete?")
+    answer = input("Y/N: ")  # y n
+    if answer.lower() == "y":
+        # delete
+        pass
+    elif answer.lower() == "n":
+        # get another input for the dates
+        pass
+    else:
+        # get the user to type y or n again
+        pass

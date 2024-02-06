@@ -1,5 +1,7 @@
+from datetime import datetime
 
-def get_user_input(input_field_name: str):
+
+def check_user_input(input_field_name: str):
 
     number_input = input(f"{input_field_name}: ")
     input_is_numbers = False
@@ -34,3 +36,18 @@ def get_user_input(input_field_name: str):
             continue
 
     return number_input
+
+
+def convert_input_to_datetime():
+
+    print("Input two digits for the day, month, and year.")
+    print("Ex) 07 22 20 for July 22nd, 2000")
+
+    day = check_user_input("Day")
+    month = check_user_input("Month")
+    year = check_user_input("Year")
+
+    date_string = f"{month}:{day}:{year}"
+    user_input_as_date = datetime.strptime(date_string, "%m:%d:%y")
+
+    return user_input_as_date
