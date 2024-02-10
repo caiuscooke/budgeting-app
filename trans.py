@@ -35,35 +35,36 @@ def display_transactions():
 
 def delete_transaction():
     user_input_as_date = convert_input_to_datetime()
-    transactions = get_txt_lines(user_input_as_date)  # [1, 3, 5, 16, 18, 20]
+    transactions = get_txt_lines(user_input_as_date)
 
     print(f"Is {transactions} the transaction you'd like to delete?")
-    answer = input("Y/N: ")  # y n
+    answer = input("Y/N: ")
     if answer.lower() == "y":
-        # would you like to delete 1 or multiple items?
-        print("would you like to delete 1 or multiple items?")
-        # accept user input - "1" or "multiple"
-        choice = input()
-        # if multiple
-        if "multiple" == choice:
-            # which numbers would you like to delete?
-            print("which numbers would you like to delete?")
-            lines_to_delete = input()
-            lines_to_delete_list = lines_to_delete.split()
-            # ["1,", "3,", "16,", "20"]
-            for each in lines_to_delete_list:
-                if "," in each:
-                    each = each[:-1]
 
-            # ["1", "3", "16", "20"]
-            # delete the remaining items in the transactions list from the txt file
-            with open("trans.txt", "w") as file:
-                lines = file.readlines()
-                for index in lines_to_delete_list:
-                    # go to the specific line in the file
-                    # and delete it
-                    del lines[index]
-                file.write(lines)
+        print("which numbers would you like to delete?")
+        lines_to_delete = input()
+        lines_to_delete_list = lines_to_delete.split()
+
+        for each in lines_to_delete_list:
+            if "," in each:
+                each = each[:-1]
+
+        lines_to_delete_list = reversed(lines_to_delete_list)
+        # w+: it truncates a file, then reads, then writes
+        # r+: it doesn't truncate a file, then reads, then writes
+
+        # seek
+        # python opens files in a virtual space
+        # uses a virtual cursor
+        # reads line-end characters to go to the next line
+
+        with open("trans.txt", "r") as file:
+            lines = file.readlines()
+        with open("trans.txt", "w") as file:
+            for index in lines_to_delete_list:
+                del lines[int(index)]
+            file.writelines(lines)
+
     elif answer.lower() == "n":
         # get another input for the dates
         pass

@@ -7,8 +7,3 @@ class Login:
         with open("login.txt", "a") as file:
             file.write(
                 f"\n{self.username} {self.password}")
-
-
-username = input("Type in a username")
-new_user = Login("caius_cooke", "12345678")
-new_user.save()
