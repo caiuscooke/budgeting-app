@@ -1,0 +1,17 @@
+welcom to user to app
+do you have an account  
+if the have an account 
+go to login
+while user login wrong 
+if login and password == correct login and password
+print welcom back to the budget app would you like to delete or view, 
+view all, edit, add, quit, or log out transaction 
+else
+
+else  
+go to create a log in 
+
+if delete
+go to delete_transaction()
+elif view 
+view_transaction()

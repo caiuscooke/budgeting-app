@@ -1,0 +1,30 @@
+if single == choice 
+print are you sure you want to delete jus one transaction 
+if yes 
+print what date do you wanna delete 
+ask for lines_to_delete
+retrieve lines_to_delete_list
+for index in lines_to_delete_list
+if index == choice 
+del lines[index]
+file.write(lines)
+elif no 
+print did you change your mind and wanna delete more than one transaction
+
+
+
+elif n 
+print you did not wanna delete anything are u sure?
+if yes 
+go back to main menue   
+if no 
+go to the what do you want to delete prompt 
+
+
+else 
+start the def delete_transaction over in a while loop 
+prompt user input for y/n 
+if "y" 
+else 
+"n"
+send user back to main menue 
