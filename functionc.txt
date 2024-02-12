@@ -1,0 +1,4 @@
+reverse()
+seek()
+.truncate()
+big o notation 
