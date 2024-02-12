@@ -1,0 +1,51 @@
+syntax errors are when you type something wrong
+logic errors are when you type it right, but it won't run the way you expect
+(list, dictionary, str, tuple) 
+(tuples cannot be changes aka immutable)
+not a syntax error, typo (input doesn't need input(""))
+
+can we edit the del function to make this
+
+from datetime import datetime
+from get_input import convert_input_to_datetime
+from file_manipulation import get_txt_lines
+
+maybe add a while loop  to keep it going unless the user says no to editing or quits 
+
+are you editing one or more transactions.
+print("do you want to edit one or multiple transactions?")
+get user input for date wants to edit
+user_input_as_date = convert_input_to_datetime()
+get transaction/s that user wants to edit
+transactions = get_txt_lines(user_input_as_date)
+print(f"is this the {transactions} transaction you want to edit? ")
+get an input from the user (y/n)
+
+if answer.lower() == "n"
+    handle if the user says no
+    this has to break a loop/quit the current function
+
+split each transaction for the desired date into an item in a list
+display ui for choice of edits they wanna make 
+print("What do you want to edit in transactions?:  date , category, amount, time, product?")
+ask user "what do you want to edit: category, amount, time, date"
+edits = input()
+turn edits into an iterable specifically a list called edits_list
+
+for desired_edit in the edits_list
+
+    wrap the following lines in a function for each category of edits
+    call the function here, with the parameter passed = desired_edit
+
+    if desired_edit == "product"
+        print the transactions[someindex]
+        edit1= input("what is the new product?: ")
+        print(f"are you sure you want to change {transaction} to {edited transaction}")
+        get user input (y/n)
+        if y
+            make the edit appear in the txt file
+        if n
+            accept new product for user to input  
+        print ("would you like to change anytthing else in this transaction?")
+
+make a copy of the before and store it somewhere until the user exits the program
