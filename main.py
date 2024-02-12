@@ -4,7 +4,7 @@ import trans
 def main():
     print("Welcome to the budget app")
     have_account = input("Do you have an account? y/n: ")
-    if have_account.lower() == "y":
+    if have_account.lower() == "y":  # place loop here
         # go to the login function
         pass
     else:
