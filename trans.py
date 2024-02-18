@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from get_input import convert_input_to_datetime
+from get_input import *
 from file_manipulation import get_txt_lines
 
 
@@ -18,37 +18,30 @@ class Transaction:
             file.write(
                 f"\n{self.category} {self.amount} {self.time} {self.date} {self.product}")
 
+
 def add_transaction():
-    # add function pseudo
-    # print instruction to user
+
     print("Type in the information based on the prompt")
-    # create an empty list
     transaction_information = []
-    # make a list for the prompts
-    prompts = ["Category: ", "Amount: ", "Time: ", "Date: ", "Products Bought: "]
-    # make a for loop where each iteration
-    for prompt in prompts: 
-    # we get user input
-        information = input()
-    # append user's input to the list
-        transaction_information.append(information)
-    # prompt user to confirm information is correct
-    is_correct = input(f"Is {" ".join(transaction_information)} correct? [y/n]: ")
-    # if yes
+
+    category = get_category()
+    amount = get_amount()
+    time = get_time()
+
+    transaction_information_string = " ".join(transaction_information)
+    is_correct = input(f"Is {transaction_information_string} correct? [y/n]: ")
     if is_correct.lower() == "y":
-    #   create an instance with the information gathered
         new_transaction = Transaction(
-            transaction_information[0], transaction_information[1],
-            transaction_information[2], transaction_information[3],
-            transaction_information[4]
+            category, amount,
         )
-    #   on that instance, call the save function
         new_transaction.save()
-    #   inform user of successful save
         print("The transaction has been saved.")
-    #   ask user if they'd like to add another
         add_more = input("Would you like to add another transaction? [y/n]: ")
-        
+        if add_more.lower() == "y":
+            add_transaction()
+    elif is_correct.lower() == "n":
+        add_transaction()
+
 
 def view():
     with open("trans.txt", "r") as file:

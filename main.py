@@ -19,17 +19,12 @@ def main():
         option_map = {
             options[0]: "xxxxxxxx",
             options[1]: "view",
-            options[2]: "Transaction",
+            options[2]: "add_transaction",
         }
         for index, each in enumerate(options):
             print(f"{index+1}) {each}")
         print("type a number to select an option")
         choice = input()
-        # replace with the following pseudo
-        # loop through options
-        # if choice as an int minus 1 equals the current index in the loop
-        # get the attribute from trans module for the appropriate choice
-        # call the attribute
         for index, option in enumerate(options):
             if (int(choice) - 1) == index:
                 function_attribute = getattr(trans, option_map.get(option))
