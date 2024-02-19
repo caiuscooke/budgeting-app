@@ -52,6 +52,6 @@ for desired_edit in the edits_list
             make the edit appear in the txt file
         if n
             accept new product for user to input  
-        print ("would you like to change anytthing else in this transaction?")
+        print ("would you like to change anything else in this transaction?")
 
 make a copy of the before and store it somewhere until the user exits the program

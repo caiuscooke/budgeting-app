@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, time, date
 
 
 def check_user_input(input_field_name: str):
@@ -51,3 +51,45 @@ def convert_input_to_datetime():
     user_input_as_date = datetime.strptime(date_string, "%m:%d:%y")
 
     return user_input_as_date
+
+
+def get_category():
+
+    category_options = (
+        "Groceries", "Commuting", "Entertainment", "Dining",
+        "Home Improvement", "Self-Care", "Work Related Expenses",
+        "Cost of Living Bills", "Subscriptions"
+    )
+
+    print("Select a category that fits your transaction:")
+    for index, category in enumerate(category_options):
+        print(f"{index+1}) {category}")
+
+    selected_category = input("Enter a number:  (1/9) ")
+    selected_index = int(selected_category) - 1
+
+    return category_options[selected_index].lower()
+
+
+def get_amount():
+    amount = input("Enter the $ amount: ")  # "4000"
+    amount_float = float(amount)  # -> int 4000
+    amount = "{:.2f}".format(amount_float)  # -> str "4000.00"
+    return amount
+
+
+def get_time():
+    hours = input("Enter the hours: ")
+    hours_int = int(hours)
+
+    minutes = input("Enter the minutes: ")
+    minutes_int = int(minutes)
+
+    time_object = time(hours_int, minutes_int)
+    return str(time_object)
+
+
+def get_date():
+    date_object = convert_input_to_datetime().date()
+
+    return str(date_object)

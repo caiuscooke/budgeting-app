@@ -1,22 +1,49 @@
 from datetime import datetime
 
-from get_input import convert_input_to_datetime
+from get_input import *
 from file_manipulation import get_txt_lines
 
 
 class Transaction:
-    def __init__(self, category: str, amount: float, time: str, date: str, product: list):
+    def __init__(self, category: str, amount: str, time: str, date: str, venue: str):
         self.category = category
         self.amount = amount
         self.time = time
         self.date = date
-        self.product = product
+        self.venue = venue
 
     # create a txt:
     def save(self):
         with open("trans.txt", "a") as file:
             file.write(
-                f"\n{self.category} {self.amount} {self.time} {self.date} {self.product}")
+                f"\n{self.category} {self.amount} {self.time} {self.date} {self.venue}")
+
+
+def add_transaction():
+
+    print("Type in the information based on the prompt")
+
+    category = get_category()
+    amount = get_amount()
+    time = get_time()
+    date = get_date()
+    venue = input("Enter the location you made the purchase: ")
+
+    transaction_information = [category, amount, time, date, venue]
+    transaction_information_string = " ".join(transaction_information)
+    is_correct = input(f"Is {transaction_information_string} correct? [y/n]: ")
+
+    if is_correct.lower() == "y":
+        new_transaction = Transaction(
+            category, amount, time, date, venue
+        )
+        new_transaction.save()
+        print("The transaction has been saved.")
+        add_more = input("Would you like to add another transaction? [y/n]: ")
+        if add_more.lower() == "y":
+            add_transaction()
+    elif is_correct.lower() == "n":
+        add_transaction()
 
 
 def view():
