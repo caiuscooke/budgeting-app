@@ -1,8 +1,12 @@
 type of trans: amount category date time
+
 def edit_list
+
+
 choice = input()
 print ("what do you want to edit about transaction:product amount category date time")
 make a list of trans_list ?
+
 for iteam in trans_list 
 if choice == itemin list:
 print ("are you sure you want to edit {choice} y/n")
