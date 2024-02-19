@@ -1,4 +1,4 @@
-from datetime import datetime, time
+from datetime import datetime, time, date
 
 
 def check_user_input(input_field_name: str):
@@ -81,7 +81,15 @@ def get_amount():
 def get_time():
     hours = input("Enter the hours: ")
     hours_int = int(hours)
+
     minutes = input("Enter the minutes: ")
     minutes_int = int(minutes)
+
     time_object = time(hours_int, minutes_int)
     return str(time_object)
+
+
+def get_date():
+    date_object = convert_input_to_datetime().date()
+
+    return str(date_object)

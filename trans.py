@@ -5,34 +5,37 @@ from file_manipulation import get_txt_lines
 
 
 class Transaction:
-    def __init__(self, category: str, amount: float, time: str, date: str, product: list):
+    def __init__(self, category: str, amount: str, time: str, date: str, venue: str):
         self.category = category
         self.amount = amount
         self.time = time
         self.date = date
-        self.product = product
+        self.venue = venue
 
     # create a txt:
     def save(self):
         with open("trans.txt", "a") as file:
             file.write(
-                f"\n{self.category} {self.amount} {self.time} {self.date} {self.product}")
+                f"\n{self.category} {self.amount} {self.time} {self.date} {self.venue}")
 
 
 def add_transaction():
 
     print("Type in the information based on the prompt")
-    transaction_information = []
 
     category = get_category()
     amount = get_amount()
     time = get_time()
+    date = get_date()
+    venue = input("Enter the location you made the purchase: ")
 
+    transaction_information = [category, amount, time, date, venue]
     transaction_information_string = " ".join(transaction_information)
     is_correct = input(f"Is {transaction_information_string} correct? [y/n]: ")
+
     if is_correct.lower() == "y":
         new_transaction = Transaction(
-            category, amount,
+            category, amount, time, date, venue
         )
         new_transaction.save()
         print("The transaction has been saved.")
