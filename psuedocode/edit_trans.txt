@@ -25,6 +25,12 @@ if answer.lower() == "n"
     handle if the user says no
     this has to break a loop/quit the current function
 
+    while True:
+        print("do you want to edit one multiple transactions? y/n ")
+        answer = input()
+        if answer.lower == "n":
+            break
+
 split each transaction for the desired date into an item in a list
 display ui for choice of edits they wanna make 
 print("What do you want to edit in transactions?:  date , category, amount, time, product?")
