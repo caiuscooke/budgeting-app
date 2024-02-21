@@ -14,3 +14,19 @@ if "y"== :
 append choice in list 
 else:
 edit_list()
+
+
+password
+import hashlib
+h = hashlib.new("SHA256")
+or 
+h =hashlib.SHA256()
+h.update(b"hash_info.encode()")
+print (h.digest())
+print (h.hexdigest()) best way to do it 
+EX
+import hashlib
+h = hashlib.new("SHA256")
+pw = input()
+h.update(b"pw.encode()")
+print (h.hexdigest()) 
