@@ -1,0 +1,9 @@
+.count() to count iteams 
+len()
+.append() to add to the list 
+set() to get rid of duplicates 
+bool variabels can help with if statments to check 
+super variables can be made when multiple are true or false 
+
+
+capital indexes middle letter double letter 
