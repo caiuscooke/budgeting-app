@@ -26,14 +26,6 @@ def create_user():
         return create_user()
     
     # open the text file
-<<<<<<< HEAD
-    # read the textfile into a list (aka use readlines())
-    # for each item in that list
-    # if username in each
-    # notify user that name is already taken
-    # recursively call the create_user function
-    # list of unaccepted characters
-=======
     with open("login.txt", "r") as file:
         # read the textfile into a list (aka use readlines())
         lines = file.readlines() # ["caiuscooke al;skdjf908234jlasdf"]
@@ -49,7 +41,6 @@ def create_user():
     # list of accepted characters
     accepted_char_list = ["!", "#", "%", "&", "?", "@", "￥", "$"] 
     acceptable_num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
->>>>>>> 04a842dae3ce3e3b91b598222bb02683c47a6ca2
     # print a statement of the requirements (one capital, one number, one special character)
     print(
         "Password must have at least one lowercase, "
@@ -59,29 +50,11 @@ def create_user():
     accepted_char_str = " ".join(accepted_char_list)
     print(f"The accepted characters are {accepted_char_str}")
     # while True
-<<<<<<< HEAD
-    # ask for password
-    # ask for password again
-    # for each in password
-    # if each in unaccepted characters
-    # print that the user has chosen an unacceptable character
-    # continue
-    # if each is in a list of capital letters
-    # set a variable called has_capital to true
-    # if each is in a list of acceptable symbols
-    # set a variable called has_symbol to true
-    # if each is 1 - 0
-    # set a variable called has_number to true
-    # if confirmation matches and (has_capital, has_symbol, and has_number is true)
-    # break
-=======
     while True:
         # ask for password
         first_password = input("Enter your password: ")
-        # ask for password again
-        confirmation_password = input("Enter your password again: ")
         # for each in password
-        has_capital, has_symbol, has_number = False
+        has_capital, has_symbol, has_number, has_lower = False, False, False, False
 
         for each in first_password: # 1L7xvb#09!
             
@@ -98,19 +71,33 @@ def create_user():
                 # set a variable called has_number to true
                 has_number = True
             elif each in ascii_lowercase:
-                continue
+                has_lower = True
             # else
             else:
                 # tell the user that the character they inputed was unacceptable
                 print("You have an unaccepted character in your chosen password")
-                # continue
-                continue
-            
-        # if confirmation matches and (has_capital, has_symbol, and has_number is true)
-            # break 
->>>>>>> 04a842dae3ce3e3b91b598222bb02683c47a6ca2
+                break
+        # ask for password again
+        confirmation_password = input("Enter your password again: ")
+        passwords_match = confirmation_password == first_password
+        password_len_ok = len(first_password) >= 8
+        password_ok = (has_capital 
+                       and has_symbol 
+                       and has_number 
+                       and has_lower 
+                       and password_len_ok 
+                       and passwords_match)
+        if password_ok:
+            # break
+            break 
+        elif not password_ok:
+            print("password NOT ok!")
+            continue
+    print("password OK!")
     # confirm username and password to user
     # create an instance of the User class
     # call the save function on the new instance
     # return True
     pass
+
+create_user()
