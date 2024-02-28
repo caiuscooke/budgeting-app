@@ -135,4 +135,4 @@ def check_palindrome(some_string):
             return True
     return False
 
-print(check_palindrome("racecar"))
+print(check_palindrome("asdfghjkllkjhgfdsa"))
