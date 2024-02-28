@@ -39,7 +39,7 @@ for index, word in enumerate(test_list):  # change test => word
     # append(random_word) => test_list[index] += random_word
     test_list[index] += random_word
 
-print(test_list)  # took this from the loops scope => outside of the loop
+# print(test_list)  # took this from the loops scope => outside of the loop
 
 # anytime you want to modify the current instance in the loop,
 # use "for index, each in enumerate(iterable):"
@@ -95,3 +95,44 @@ def check_double_letters_v2(word_to_check: str):
     return False
 
 # if statements can be used to stop the code from running something until a certain point
+
+
+# take a list of lists and conver it to a single dimensional list
+# aka [[1,2],[3,4]] => [1,2,3,4]
+
+def list_abtstractor(nested_num_list):
+    # nested_num_list = [[1,2],[3,4]] # solid name!
+    for num_list in nested_num_list[1:]: # slicing first number is inclusive
+        for num in num_list:
+            nested_num_list[0].append(num)
+    return nested_num_list[0]
+# No need to enumerate here because the index we're modifying is the same every time
+
+
+# write a function that takes a string and adds a dot between each letter
+# for example test => t.e.s.t.
+def add_periods(some_string):
+    empty_string = ""
+    for letter in some_string:
+        # append maybe?
+        # maybe at the index+1 add a period for each character in the string
+        empty_string += (letter + ".")
+    return empty_string
+# print(add_periods("hello"))
+
+# palindromes; if the word is the same forward and backwards, return true
+# if the word is not the same forwards and backwards, return false
+def check_palindrome(some_string):
+    # have to use a for loop/cannot use reversed function
+
+    if some_string[0] == some_string[-1]:
+        string_to_compare = "" #dog => add item at 2nd index to empty string, then 1st, then 0
+        some_string_final_index = len(some_string) - 1
+        for index in range(some_string_final_index, 0, -1): # stop is not inclusive
+            string_to_compare += some_string[index]
+        string_to_compare += some_string[0]
+        if string_to_compare == some_string:
+            return True
+    return False
+
+print(check_palindrome("racecar"))
