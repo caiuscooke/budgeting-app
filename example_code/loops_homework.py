@@ -136,3 +136,34 @@ def check_palindrome(some_string):
     return False
 
 print(check_palindrome("asdfghjkllkjhgfdsa"))
+
+# empty_num = 0
+# empty_string = ""
+# empty_list = []
+
+# count syllables if you are given a word that already has the syllables seperated by
+# a hyphen. For example; if the word looks like "hel-lo" the function should return 2
+def check_syllables(some_string: str) -> int:
+    hyphens = 0
+    # check if there is a hyphen in the word
+    if "-" in some_string:
+        # go over each letter in the word
+        for letter in some_string:
+            # if it's a hyphen, 
+            if letter == "-":
+                # hyphens variable += 1
+                hyphens += 1
+        # return hyphens variable
+        return hyphens
+    return 0            
+    # if there isn't, return 0
+
+# accept input from a user
+# in a list from 1-10, add that number the user typed to each in the list
+# do that again, however many times the user typed in
+# example VVVVVV
+# [1,2,3,4,5,6,7,8,9,10]
+# user types 2
+# add 2 to each number in the list, 2 times
+# expected output => [5,6,7,8,9,10,11,12,13,14]
+# must use a while loop and a for loop
