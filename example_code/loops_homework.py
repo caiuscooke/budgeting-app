@@ -135,7 +135,6 @@ def check_palindrome(some_string):
             return True
     return False
 
-print(check_palindrome("asdfghjkllkjhgfdsa"))
 
 # empty_num = 0
 # empty_string = ""
@@ -167,3 +166,71 @@ def check_syllables(some_string: str) -> int:
 # add 2 to each number in the list, 2 times
 # expected output => [5,6,7,8,9,10,11,12,13,14]
 # must use a while loop and a for loop
+
+num_list = [1,2,3,4,5,6,7,8,9,10]
+user_input = int(input()) # 2
+control_num = 0
+while user_input > control_num: # this controls how many times we do the addition
+    control_num += 1
+    for index in range(10):
+        num_list[index] += user_input
+print(num_list)
+
+# use range when you have a fixed thing to loop over
+# use the iterable when it's not fixed length and you need the items from the list
+# use the iterable plus enumerate when you need the items and the index
+
+# while loops are the exact same as a for loop under the hood
+# empty_list = []
+# start = 0
+# stop = 5
+# while start < stop:
+#     empty_list.append("hello")
+#     start += 1
+# for num in range(5):
+#     empty_list.append("hello")
+# user_given_numb = int(input("enter a whole number: "))
+# for numb in range(1, 11):
+#     print(numb * user_given_numb)
+
+
+
+"""
+numbers_in_list = [12, 75, 150, 180, 145, 525, 50]
+for num in numbers_in_list:
+    if num > 150 and num <= 500:
+        print("skip")
+        continue
+    if num > 500:
+        print("break")
+        break
+    if num % 5 == 0:
+        print(num)
+"""
+
+# Calculate the sum of all numbers from 1 to a given number
+# Write a program to accept a number from a user 
+# and calculate the sum of all numbers from 1 to a given number
+# For example, if the user entered 10 the output should be 55 (1+2+3+4+5+6+7+8+9+10)
+
+# user_input = int(input())
+# empty_list = []
+# for num in range(1, user_input+1):
+    # append num to the list and add it
+    # empty_list.append(num)
+# empty list => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# new_empty_list = []
+# empty_num = 0
+# for num in empty_list:
+#     empty_num += num
+    # if index < user_input-1:
+        # num += empty_list[index+1]
+        # new_empty_list.append(num)
+# new_empty_list => [3, 5, 7, 9, 11, 13, 15, 17, 19] !!!!
+"""
+user_input = int(input()) + 1
+final_result = 0
+for num in range(1, user_input):
+    final_result += num
+print(final_result)
+"""
