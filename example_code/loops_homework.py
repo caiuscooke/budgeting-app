@@ -27,6 +27,8 @@
 
 # make a for loop that adds a random word to each entry in a list
 # ["hello", "world"] -> ["hello randomword1", "world randomword2"]
+
+"""
 from string import ascii_uppercase
 import random
 random_words_list = ["cheese", "doodle", "cash",
@@ -38,6 +40,7 @@ for index, word in enumerate(test_list):  # change test => word
     random_word = random.choice(random_words_list)
     # append(random_word) => test_list[index] += random_word
     test_list[index] += random_word
+"""
 
 # print(test_list)  # took this from the loops scope => outside of the loop
 
@@ -52,7 +55,7 @@ for index, word in enumerate(test_list):  # change test => word
 
 # For example, calling capital_indexes("HeLlO") should return the list [0, 2, 4].
 
-
+"""
 def get_capital_indexes(word_to_check: str):
     capital_indexes = []
     for index, letter in enumerate(word_to_check):
@@ -62,6 +65,7 @@ def get_capital_indexes(word_to_check: str):
         if letter in ascii_uppercase:
             capital_indexes.append(index)
     return capital_indexes
+"""
 
 # The goal of this challenge is to analyze a string to check if it contains
 # two of the same letter in a row. For example, the string "eello" has l twice
@@ -167,6 +171,7 @@ def check_syllables(some_string: str) -> int:
 # expected output => [5,6,7,8,9,10,11,12,13,14]
 # must use a while loop and a for loop
 
+"""
 num_list = [1,2,3,4,5,6,7,8,9,10]
 user_input = int(input()) # 2
 control_num = 0
@@ -175,6 +180,7 @@ while user_input > control_num: # this controls how many times we do the additio
     for index in range(10):
         num_list[index] += user_input
 print(num_list)
+"""
 
 # use range when you have a fixed thing to loop over
 # use the iterable when it's not fixed length and you need the items from the list
@@ -234,3 +240,42 @@ for num in range(1, user_input):
     final_result += num
 print(final_result)
 """
+
+"""
+user_given_numb = int(input("enter a whole number: ")) + 1
+
+for outer_num in range(1, user_given_numb): # 5
+    for inner_num in range(1, outer_num + 1):
+        # this is option 1 VVVVV
+        # if inner_num < outer_num:
+        #     print("*", end=" ")
+        # elif inner_num == outer_num:
+        #     print("*")
+        # this is option 2 VVVVV
+        print("*", end=" ")
+    print("")
+
+# range(5) => stops at 4, starts at 0
+# range always starts at 0 unless you say otherwise
+# range(1, 6) stops at 5, starts at 1
+
+# User Input == 5
+# *
+# **
+# ***
+# ****
+# *****
+"""
+
+# Iterate string in reverse order
+# if the user types in "hello" print out "o l l e h"
+# dont use reversed()
+
+# get a word
+# forward_string = input("enter a word: ")
+# forward_string = reversed(forward_string)
+# # make a empty string to store n new word
+# reversed_string = ""
+# # go overletters in word
+# for letter in forward_string:
+#     print(letter + " ", end=" ")
