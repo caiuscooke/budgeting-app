@@ -27,7 +27,7 @@ def check_user_input(input_field_name: str):
             number_input = input(f"{input_field_name}: ")
             input_is_numbers = False
             continue
-
+                
         date_num_in_range = int(number_input) < 1 or int(number_input) > 12
         if input_field_name == "Month" and date_num_in_range:
             print("Type a real month.")
