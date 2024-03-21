@@ -30,10 +30,11 @@ def recursive_function(number: int) -> bool:
 # example:
 # x = 10
 # return should be the value of 1 * 2 * 3 * ... * 10
-def factorial(x):
-    if x <= 1:
-        return 1
-    else:
-        return (x * factorial(x - 1))
+# def factorial(x):
+#     if x <= 1:
+#         return 1
+#     else:
+#         return (x * factorial(x - 1))
 
-print(factorial(5))
+# print(factorial(5))
+
