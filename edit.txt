@@ -14,7 +14,6 @@ show them the edit
 confirm everything is correct 
 ask if they wanna edit something else 
 
-edit_
-feild =input("What would you like to edit about the transaction?")
+edit_feild =input("What would you like to edit about the transaction?")
 numb_of_edit_feild =input("How many transactions do you wanna edit?")
 date_of_edit_feild =input("How many transactions do you wanna edit?")
