@@ -1,32 +1,20 @@
-type of trans: amount category date time
+to edit a transanction
 
-def edit_list
+ask what do you wanna edit in trans (input)
+edit_feild =input("What would you like to edit about the transaction?")
+ask how many trans to be edited (int input)
+numb_of_edit_feild =input("How many transactions do you wanna edit?")
+ask for the transanction by the date (int input)
+date_of_edit_feild =input("How many transactions do you wanna edit?")
+find the date/s ==>> open text file with read
+    find what needs to be edited ==>> read text file lines and store in list
+    edit the feild 
+    save the edit back to the original position in txt file 
+show them the edit 
+confirm everything is correct 
+ask if they wanna edit something else 
 
-
-choice = input()
-print ("what do you want to edit about transaction:product amount category date time")
-make a list of trans_list ?
-
-for iteam in trans_list 
-if choice == itemin list:
-print ("are you sure you want to edit {choice} y/n")
-if "y"== : 
-append choice in list 
-else:
-edit_list()
-
-
-password
-import hashlib
-h = hashlib.new("SHA256")
-or 
-h =hashlib.SHA256()
-h.update(b"hash_info.encode()")
-print (h.digest())
-print (h.hexdigest()) best way to do it 
-EX
-import hashlib
-h = hashlib.new("SHA256")
-pw = input()
-h.update(b"pw.encode()")
-print (h.hexdigest()) 
+edit_
+feild =input("What would you like to edit about the transaction?")
+numb_of_edit_feild =input("How many transactions do you wanna edit?")
+date_of_edit_feild =input("How many transactions do you wanna edit?")

@@ -1,12 +1,12 @@
 from datetime import datetime, time, date
 
 
-def check_user_input(input_field_name: str):
+def check_user_input(input_field_name: str): # define a function with a str paramater
 
-    number_input = input(f"{input_field_name}: ")
-    input_is_numbers = False
+    number_input = input(f"{input_field_name}: ") # ask user for a number as input
+    input_is_numbers = False # set a variable controlling if the input is a number or not to false
 
-    while not input_is_numbers:
+    while not input_is_numbers: 
         try:
             int(number_input)
             input_is_numbers = True
