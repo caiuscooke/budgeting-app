@@ -1,8 +1,2 @@
-The user will type in a number as an input
-the expected output if the user types in 5 should be
-Nested for loop to print the following pattern
-*
-* *
-* * *
-* * * *
-* * * * *
+file:///
+to look throught files in your computer 

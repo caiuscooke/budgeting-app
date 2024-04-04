@@ -88,7 +88,7 @@ def get_capital_indexes(word_to_check: str):
 # PROBLEM5
 """
 # The goal of this challenge is to analyze a string to check if it contains
-# two of the same letter in a row. For example, the string "eello" has l twice
+# two of the same letter in a row. For example, the string "hello" has l twice
 # in a row, while the string "nono" does not have two identical letters in a row.
 
 # Define a function named double_letters that takes a single parameter.
@@ -98,7 +98,7 @@ def get_capital_indexes(word_to_check: str):
 
 def check_double_letters(word_to_check: str):
     # go through each letter in the word
-    # see if the letter you're on matches the one in front\behind
+    # see if the letter you're on matches the one in front/behind
     # if that ever happens, write true off to the side
     current_letter = []
     for index, letter in enumerate(word_to_check):
