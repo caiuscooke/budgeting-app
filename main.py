@@ -18,7 +18,7 @@ def main():
     options = ["Edit", "View", "Add",
                "Delete", "View All", "Delete All"]
     option_map = {
-        options[0]: "xxxxxxxx",
+        options[0]: "edit_transaction",
         options[1]: "view",
         options[2]: "add_transaction",
     }

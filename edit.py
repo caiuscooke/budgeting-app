@@ -6,10 +6,10 @@
 # then change the item the user wants to edit ==> overwrite the file
 from get_input import convert_input_to_datetime
 from file_manipulation import get_txt_lines
+from datetime import datetime
 
 def edit_transaction():
     user_input_as_date = convert_input_to_datetime()
-    transactions = get_txt_lines(user_input_as_date)    
     # we can't use get_txt_lines because
     # we need to use the whole txt file, not just a list of the 
     # items 

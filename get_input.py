@@ -41,10 +41,10 @@ def check_user_input(input_field_name: str): # define a function with a str para
 def convert_input_to_datetime():
 
     print("Input two digits for the day, month, and year.")
-    print("Ex) 07 22 20 for July 22nd, 2000")
+    print("Ex) 07 22 20 for July 22nd, 2020")
 
-    day = check_user_input("Day")
     month = check_user_input("Month")
+    day = check_user_input("Day")
     year = check_user_input("Year")
 
     date_string = f"{month}:{day}:{year}"
