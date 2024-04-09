@@ -1,17 +1,38 @@
-from datetime import datetime
+from datetime import datetime 
+# importing the datetime class from the datetime module
 
 
-def get_txt_lines(user_input_as_date: datetime):
-    with open('trans.txt', 'r') as file:
-        transactions = file.readlines()
+def get_txt_lines(user_input_as_date: datetime): 
+# defining a function with 1 paramater (datetime object)
+    
+    with open('trans.txt', 'r') as file: 
+    # open the trans.txt as "file" with the "read" functionality 
+        
+        transactions = file.readlines() 
+        # make a list of strings out of each transaction in the txt file
 
-        transaction_results = []
-        for index, transaction in enumerate(transactions):
-            line_split = transaction.split()
-            date = line_split[3]  # string date from the txt file
-            txt_file_as_date = datetime.strptime(date, "%Y-%m-%d")
+        transaction_results = [] 
+        # initialize a list to add the transactions at a specific date 
+        # AKA the date provided by our parameter
+        
+        for index, transaction in enumerate(transactions): 
+        # make a for loop to access the index and each item in the lines
+            
+            line_split = transaction.split() 
+            # split each transaction to index the date for each transaction
 
-            if user_input_as_date == txt_file_as_date:
-                transaction_results.append(f"{transaction} {index}")
+            date = line_split[3]  
+            # declare a variable for the date of the transaction
+            
+            transaction_date_as_datetime = datetime.strptime(date, "%Y-%m-%d") 
+            # convert date from txt file line to datetime object
+            # so that we can compare dates instead of strings to ensure accuracy
+
+            if user_input_as_date == transaction_date_as_datetime: 
+            # compare the date the user input to the date for each transaction 
+                
+                transaction_results.append(f"{transaction} {index}") 
+                # if the two dates match, add it to the transaction results list with the index 
 
         return transaction_results
+
