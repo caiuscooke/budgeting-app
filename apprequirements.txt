@@ -1,0 +1,22 @@
+text bassed 
+open with welcome back user name
+1first list sumited transactions if any is on account 
+
+-----------------------------------
+ft to add transactions
+ft to delete transactions
+ft to edit transactions
+add recuring bills y/n
+
+if yes remind me if i log in close to day
+date & time of transaction 
+
+-------------------------------
+add current balance 
+--------------------------------
+groups of transaction types
+1groccery/food
+2gas/travel
+3entertainment/
+4bills 
+ 
