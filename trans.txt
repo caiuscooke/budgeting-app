@@ -1,3 +1,3 @@
-groceries 100.00 08:32:00 2024-02-04 Harris Teeter
+dining 100.00 08:32:00 2024-02-04 Harris Teeter
 subscriptions 14.00 12:01:00 2024-02-04 Spotify
 subscriptions 14.00 12:01:00 2024-03-04 Spotify
