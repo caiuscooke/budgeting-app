@@ -1,6 +1,7 @@
 text bassed 
 open with welcome back user name
-1first list sumited transactions if any is on account 
+
+1first list sumited transactions if any is on account ?
 
 -----------------------------------
 ft to add transactions
@@ -20,3 +21,11 @@ groups of transaction types
 3entertainment/
 4bills 
  
+# get name#
+name = input("what is your name?: ")
+if not name:
+    print(f"you used the numbers{name} i need your name.")
+else:
+    print(f"WELCOMEBACK {name}.")
+# open with welcom back user name#
+
