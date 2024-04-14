@@ -49,9 +49,9 @@ def edit_transaction():
                     "What would you like to change this item to? ")
                 # if the user types in a certain number, go to that index and change it to what the user typed in
                 # current_line_split[index] = new_information
-
+                transaction_split[ind] = new_information
                 # convert the split list into a string, store it in a variable " ".join(list)
-
+                "".join(transaction_split)
                 # at the current iteration's index, replace the information with the variable from line 48
 
     # open the text file with "write" functionality
