@@ -1,0 +1,9 @@
+Make a new branch in VSCode and publish that branch before you make changes.
+Make any new changes to the code via that branch.
+When you are done making changes, push the commits to github via that branch.
+Navigate to the project on github.com and click on the branch you were working on.
+Click the button that says "create pull request"
+Give a description and click create 
+
+Then after he does that I go github.com, review and merge the request and delete that branch.
+He will then in vscode switch b
