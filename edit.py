@@ -4,6 +4,18 @@ from file_manipulation import get_txt_lines
 from datetime import datetime
 from string import ascii_lowercase
 
+def get_index_to_edit(transaction_split: list) -> int:
+    # each item in row
+    # adds a number for each item that was split at the space in the transaction
+    for option, item in enumerate(transaction_split):
+        # display to the user the number and item at that number 0-5
+        print(f"{option}) {item}")
+    # prompt the user to type in the number they want to edit
+    print("type the number of the item you want to edit")
+    return int(input())
+    # since we used enumerate to display each item, the number the user types in
+    # is going to be equal to the index of that item, allowing us to use it later in the code
+
 
 def edit_transaction():
     user_input_as_date = convert_input_to_datetime()
@@ -37,21 +49,13 @@ def edit_transaction():
             answer = input("y/n: ")  # provide an input for the user to confirm
 
             if answer.lower() == "y":  # convert user answer to lowercase to prevent false negative
-                # each item in row
-                # adds a number for each item that was split at the space in the transaction
-                for option, item in enumerate(transaction_split):
-                    # display to the user the number and item at that number 0-5
-                    print(f"{option}) {item}")
-                # prompt the user to type in the number they want to edit
-                print("type the number of the item you want to edit")
-                ind = int(input())
-                # since we used enumerate to display each item, the number the user types in
-                # is going to be equal to the index of that item, allowing us to use it later in the code
+                
+                ind = get_index_to_edit(transaction_split)
 
                 new_information = input(
                     "What would you like to change this item to? ")  
                 # provide input for the information to replace the old info at current spot
-
+                
                 # then add the new information using the index of it (AKA the number the user typed in, line 47)
                 # adds the information to the split list, not the original so we can confirm to the user before
                 # making permanent changes
