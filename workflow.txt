@@ -5,5 +5,10 @@ Navigate to the project on github.com and click on the branch you were working o
 Click the button that says "create pull request"
 Give a description and click create 
 
-Then after he does that I go github.com, review and merge the request and delete that branch.
-He will then in vscode switch b
+Then after you does that I will go github.com, review and merge the request and delete that branch.
+You will then in vscode switch back to the main branch and run
+git fetch
+git remote prune origin
+git branch -d <branch_name>
+
+Then rinse and repeat for any new changes
