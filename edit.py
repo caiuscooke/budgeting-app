@@ -5,7 +5,11 @@ from datetime import datetime
 from string import ascii_lowercase
 
 def get_index_to_edit(transaction_split: list) -> int:
-    # each item in row
+    """
+    this function takes a list and prints out each item with a number (aka it's index) next to it
+
+    then it accepts an input so the user can choose an item from that list
+    """
     # adds a number for each item that was split at the space in the transaction
     for option, item in enumerate(transaction_split):
         # display to the user the number and item at that number 0-5
