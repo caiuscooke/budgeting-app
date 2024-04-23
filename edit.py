@@ -23,6 +23,7 @@ def get_index_to_edit(transaction_split: list) -> int:
     # since we used enumerate to display each item, the number the user types in
     # is going to be equal to the index of that item, allowing us to use it later in the code
 
+
 def get_date_from_transaction(transaction: str) -> datetime:
     # take each item in the list & split at the space
     transaction_as_list = transaction.split()
@@ -46,7 +47,7 @@ def edit_transaction():
         # next we took the information from the text file and made it into a list
         # to iterate over it and edit the transaction lines
         transactions_list = file.readlines()
-    
+
     # this for loop goes through the text file list and numbers the items by row
     for index, transaction in enumerate(transactions_list):
 
