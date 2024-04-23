@@ -1,4 +1,4 @@
-def function1(param):
+def function1(param: int):
     if param == 2:
         # imagine 3 lines of code
         print("undesirable condition")
