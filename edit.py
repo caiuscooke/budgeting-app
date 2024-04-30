@@ -1,14 +1,14 @@
 # we had to import 2 functions from files and 2 moduels
-from get_input import convert_input_to_datetime
-from file_manipulation import get_txt_lines
 from datetime import datetime
 from string import ascii_lowercase
+
+from file_manipulation import get_txt_lines
+from get_input import convert_input_to_datetime
 
 
 def get_index_to_edit(transaction_split: list) -> int:
     """
     this function takes a list and prints out each item with a number (aka it's index) next to it
-
     then it accepts an input so the user can choose an item from that list
     """
     # block comments
@@ -59,43 +59,39 @@ def edit_transaction():
             print(f"Is {transaction} the transaction you want to edit?")
             answer = input("y/n: ")  # provide an input for the user to confirm
 
-            if answer.lower() == "y":  # convert user answer to lowercase to prevent false negative
+            if answer.lower() == "n":  # convert user answer to lowercase to prevent false negative
+                continue
 
-                transaction_split = transaction.split()
-                ind = get_index_to_edit(transaction_split)
+            transaction_split = transaction.split()
+            user_selection = get_index_to_edit(transaction_split)
 
-                new_information = input(
-                    "What would you like to change this item to? ")
-                # provide input for the information to replace the old info at current spot
+            new_information = input(
+                "What would you like to change this item to? ")
+            # provide input for the information to replace the old info at current spot
 
-                # then add the new information using the index of it (AKA the number the user typed in, line 47)
-                # adds the information to the split list, not the original so we can confirm to the user before
-                # making permanent changes
-                transaction_split[ind] = new_information
+            # then add the new information using the index of it (AKA the number the user typed in, line 47)
+            # adds the information to the split list, not the original so we can confirm to the user before
+            # making permanent changes
+            transaction_split[user_selection] = new_information
 
-                # create a variable storing the string representation of the new information
-                # this allows us to put it back into the original list (added a new line character to
-                # eliminate conflicts with adding it to the txt file)
-                new_transaction_entry = " ".join(transaction_split) + "\n"
+            # create a variable storing the string representation of the new information
+            # this allows us to put it back into the original list (added a new line character to
+            # eliminate conflicts with adding it to the txt file)
+            new_transaction_entry = " ".join(transaction_split) + "\n"
 
-                # displays the new info to the user
-                print(new_transaction_entry)
-                new_information_ok = input(
-                    "Is that information correct? [y/n] ")
-                # gets user confirmation that this information is correct
+            # displays the new info to the user
+            print(new_transaction_entry)
+            new_information_ok = input(
+                "Is that information correct? [y/n] ")
+            # gets user confirmation that this information is correct
 
-                if new_information_ok.lower() == "y":
-                    # use lower to convert user input to a lowercase letter
-                    # just in case they typed capital Y, this won't be a false negative
+            if new_information_ok.lower() == "y":
+                # use lower to convert user input to a lowercase letter
+                # just in case they typed capital Y, this won't be a false negative
 
-                    # add new entry to the original transaction_list at current iteration's index
-                    transactions_list[index] = new_transaction_entry
+                # add new entry to the original transaction_list at current iteration's index
+                transactions_list[index] = new_transaction_entry
 
     with open("trans.txt", "w") as file:  # open the text file again to overwrite the new information
         # over writes the old text file with the new information
         file.writelines(transactions_list)
-
-
-edit_transaction()
-
-# example code in the example branch
