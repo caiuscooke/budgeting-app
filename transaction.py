@@ -2,6 +2,7 @@ from datetime import datetime
 
 from get_input import *
 from edit import *
+from paycheck import *
 from file_manipulation import get_txt_lines
 
 
@@ -30,9 +31,8 @@ def add_transaction():
     date = get_date()
     venue = input("Enter the location you made the purchase: ")
 
-    transaction_information = [category, amount, time, date, venue]
-    transaction_information_string = " ".join(transaction_information)
-    is_correct = input(f"Is {transaction_information_string} correct? [y/n]: ")
+    transaction_information = f"{category} {amount} {time} {date} {venue}"
+    is_correct = input(f"Is {transaction_information} correct? [y/n]: ")
 
     if is_correct.lower() == "y":
         new_transaction = Transaction(

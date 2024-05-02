@@ -1,4 +1,4 @@
-import trans
+import transaction
 
 
 def main():
@@ -15,12 +15,13 @@ def main():
         # handle other input errors here
         pass
 
-    options = ["Edit", "View", "Add",
+    options = ["Add Paycheck", "Edit", "View", "Add",
                "Delete", "View All", "Delete All"]
     option_map = {
-        options[0]: "edit_transaction",
-        options[1]: "view",
-        options[2]: "add_transaction",
+        options[0]: "add_paycheck",
+        options[1]: "edit_transaction",
+        options[2]: "view",
+        options[3]: "add_transaction",
     }
 
     user_logged_in = True  # placeholder
@@ -32,7 +33,7 @@ def main():
         choice = input()
         for index, option in enumerate(options):
             if (int(choice) - 1) == index:
-                function_attribute = getattr(trans, option_map.get(option))
+                function_attribute = getattr(transaction, option_map.get(option))
                 function_attribute()
 
 
