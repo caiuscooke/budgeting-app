@@ -31,6 +31,8 @@ def add_transaction():
     date = get_date()
     venue = input("Enter the location you made the purchase: ")
 
+    
+
     transaction_information = f"{category} {amount} {time} {date} {venue}"
     is_correct = input(f"Is {transaction_information} correct? [y/n]: ")
 
