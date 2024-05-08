@@ -4,6 +4,7 @@ from get_input import *
 from edit import *
 from paycheck import *
 from file_manipulation import get_txt_lines
+from balances import calculate_balance
 
 
 class Transaction:
@@ -31,8 +32,6 @@ def add_transaction():
     date = get_date()
     venue = input("Enter the location you made the purchase: ")
 
-    
-
     transaction_information = f"{category} {amount} {time} {date} {venue}"
     is_correct = input(f"Is {transaction_information} correct? [y/n]: ")
 
@@ -42,9 +41,13 @@ def add_transaction():
         )
         new_transaction.save()
         print("The transaction has been saved.")
+
+        calculate_balance(date, time, f"-{amount}")
+
         add_more = input("Would you like to add another transaction? [y/n]: ")
         if add_more.lower() == "y":
             add_transaction()
+    
     elif is_correct.lower() == "n":
         add_transaction()
 
