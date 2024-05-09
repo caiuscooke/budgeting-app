@@ -6,6 +6,7 @@ from paycheck import *
 from file_manipulation import get_txt_lines
 from balances import calculate_balance
 
+from core import TRANSACTION_FILE_NAME
 
 class Transaction:
     def __init__(self, category: str, amount: str, time: str, date: str, venue: str):
@@ -17,7 +18,7 @@ class Transaction:
 
     # create a txt:
     def save(self):
-        with open("trans.txt", "a") as file:
+        with open(TRANSACTION_FILE_NAME, "a") as file:
             file.write(
                 f"\n{self.category} {self.amount} {self.time} {self.date} {self.venue}")
 
@@ -53,7 +54,7 @@ def add_transaction():
 
 
 def view():
-    with open("trans.txt", "r") as file:
+    with open(TRANSACTION_FILE_NAME, "r") as file:
         lines = file.readlines()
         for line in lines:
             print(line)
@@ -91,9 +92,9 @@ def delete_transaction():
         # uses a virtual cursor
         # reads line-end characters to go to the next line
 
-        with open("trans.txt", "r") as file:
+        with open(TRANSACTION_FILE_NAME, "r") as file:
             lines = file.readlines()
-        with open("trans.txt", "w") as file:
+        with open(TRANSACTION_FILE_NAME, "w") as file:
             for index in lines_to_delete_list:
                 del lines[int(index)]
             file.writelines(lines)

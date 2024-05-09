@@ -1,4 +1,7 @@
 from get_input import get_amount, get_time, get_date
+from balances import calculate_balance
+
+from core import PAYCHECK_FILE_NAME
 
 class Paycheck:
     def __init__(self, amount: str, time: str, date: str):
@@ -7,7 +10,7 @@ class Paycheck:
         self.date = date
 
     def save(self):
-        with open("paychecks.txt", "a") as file:
+        with open(PAYCHECK_FILE_NAME, "a") as file:
             file.write(
                 f"\n{self.amount} {self.time} {self.date}")
 
@@ -29,6 +32,9 @@ def add_paycheck():
         )
         new_paycheck.save()
         print("The paycheck has been saved.")
+
+        calculate_balance(date, time, amount)
+
         add_more = input("Would you like to add another paycheck? [y/n]: ")
         if add_more.lower() == "y":
             add_paycheck()

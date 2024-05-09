@@ -1,11 +1,12 @@
 from datetime import datetime 
+from core import TRANSACTION_FILE_NAME
 # importing the datetime class from the datetime module
 
 
 def get_txt_lines(user_input_as_date: datetime): 
 # defining a function with 1 paramater (datetime object)
     
-    with open('trans.txt', 'r') as file: 
+    with open(TRANSACTION_FILE_NAME, 'r') as file: 
     # open the trans.txt as "file" with the "read" functionality 
         
         transactions = file.readlines() 

@@ -29,3 +29,16 @@ else:
     print(f"WELCOMEBACK {name}.")
 # open with welcom back user name#
 
+
+Rolling total for past week's transactions
+Monthly/yearly total for transactions and paychecks
+Show user a breakdown of transactions based on groups 
+(i.e. 40% of your income was spent on groceries)
+
+Login/Signup system
+User information hashing and encoding for privacy
+
+CHANGES TO BE MADE 
+IF the user makes an edit to a past transaction or deletes one, 
+we need to refresh the information
+in the total balances and yearly/monthly total 
