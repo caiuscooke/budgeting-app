@@ -1,0 +1,24 @@
+goal 
+get the total of p/t 
+count up the total of trans after each trans 
+write the total back to the list 
+save with out trunkacting 
+show the total to user 
+
+get trans by date time amount 
+get paycheck date time amount 
+first import the nessary info into pay checks from budgit .py 
+
+
+from balances.py import calculate_balance
+with open("transaction.txt", "r") as file:
+
+calculate_balance(date, time, f"-{amount}")
+
+trans_bal = amount 
+
+
+with open("transaction.txt", "a") as file:
+confirmation_line = f"\n{date_time_object} current balance is {new_balance:.2f}"
+file.write(confirmation_line)
+print(confirmation_line)
