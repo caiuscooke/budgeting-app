@@ -1,11 +1,19 @@
+from core import TRANSACTION_FILE_NAME
+from datetime import datetime
 # open the transactions txt file
-# store the lines in a list, call it "transactions_list"
+with open(TRANSACTION_FILE_NAME, "r") as file:
+    # store the lines in a list, call it "transactions_list"
+    transactions_list = file.readlines()
 
 # for each line in the transactions list ===>>> for transaction in transactions_list
-# 	split the line into its own list, call it "transaction_split"
+for transaction in transactions_list:
+    # 	split the line into its own list, call it "transaction_split"
+    transaction_date = transaction.split()[3]
 # 	get the date item out of transaction_split, store it in "transaction_date"
 # 	convert transaction_date to a datetime object
+    transaction_datetime = datetime.strptime(transaction_date, "%Y-%m-%d")
 # 	if the datetime object is between the first day of last month and the last day of last month
+    if < transaction_datetime <
 # 		add LINE to an empty list called "last_month_transactions"
 
 # for each transaction in last_month_transactions
