@@ -33,5 +33,9 @@ for transaction in last_month_transactions:
     # 	add the amount variable to an empty number variable called "total"
     total += amount
     # print "You spent {total} from {first day of last month (i.e. 04.01.24)} to {last day of last month (i.e. 04.30.24)}"
-    # open txt file for monthly totals
+print(
+    f" you spent {total} from {first_day_last_month} to {last_day_last_month}")
+# open txt file for monthly totals
+with open(TRANSACTION_FILE_NAME, "a") as file:
     # 	write total and month name to txt file
+    file.write(str(total))
