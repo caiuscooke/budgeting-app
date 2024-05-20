@@ -1,1 +1,4 @@
 2024-04-01 00:01:00 current balance is 300.73
+
+2024-04-05 14:26:00 current balance is 100.73
+2024-04-15 23:20:00 current balance is 80.73

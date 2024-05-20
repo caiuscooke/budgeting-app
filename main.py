@@ -16,12 +16,13 @@ def main():
         pass
 
     options = ["Add Paycheck", "Edit", "View", "Add",
-               "Delete", "View All", "Delete All"]
+               "Delete", "View All", "Delete All", "Calculate Monthly Balance"]
     option_map = {
         options[0]: "add_paycheck",
         options[1]: "edit_transaction",
         options[2]: "view",
         options[3]: "add_transaction",
+        options[7]: "calculate_monthly_total"
     }
 
     user_logged_in = True  # placeholder
