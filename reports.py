@@ -23,16 +23,15 @@ for transaction in transactions_list:
     if (first_day_last_month <= transaction_datetime
             and transaction_datetime <= last_day_last_month):
         # 		add LINE to an empty list called "last_month_transactions"
-        last_month_transactions = last_month_transactions.append(
-            transaction_datetime)
+        last_month_transactions.append(transaction)
 
-    # for each transaction in last_month_transactions
+# for each transaction in last_month_transactions
 for transaction in last_month_transactions:
     # 	split the transaction into a second "transaction_split"
-    amount = transaction.split()[1]
+    amount = float(transaction.split()[1])
     # 	get the amount from transaction_split and store it in "amount" after casting to float
     # 	add the amount variable to an empty number variable called "total"
-    amount += total
+    total += amount
     # print "You spent {total} from {first day of last month (i.e. 04.01.24)} to {last day of last month (i.e. 04.30.24)}"
     # open txt file for monthly totals
     # 	write total and month name to txt file
