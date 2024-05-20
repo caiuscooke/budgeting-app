@@ -5,21 +5,22 @@ with open(TRANSACTION_FILE_NAME, "r") as file:
     # store the lines in a list, call it "transactions_list"
     transactions_list = file.readlines()
 
-input_dt = datetime.now()
-last_month = input_dt.month - 1
-first_date = input_dt.replace(day=1)
-last = first_date - timedelta(days=1)
-lastmonth = first_date.replace(month=last_month)
-print(first_date, last, lastmonth)
+today_dt = datetime.now()
+last_month_int = today_dt.month - 1
+first_day_current_month = today_dt.replace(day=1)
+last_day_last_month = first_day_current_month - timedelta(days=1)
+first_day_last_month = first_day_current_month.replace(month=last_month_int)
+
 # for each line in the transactions list ===>>> for transaction in transactions_list
 for transaction in transactions_list:
-    # 	split the line into its own list, call it "transaction_split"
     transaction_date = transaction.split()[3]
+    # 	split the line into its own list, call it "transaction_split"
 # 	get the date item out of transaction_split, store it in "transaction_date"
 # 	convert transaction_date to a datetime object
     transaction_datetime = datetime.strptime(transaction_date, "%Y-%m-%d")
 # 	if the datetime object is between the first day of last month and the last day of last month
-if lastmonth <= transaction_datetime and transaction_datetime <= last:
+    if (first_day_last_month <= transaction_datetime 
+        and transaction_datetime <= last_day_last_month):
     # 		add LINE to an empty list called "last_month_transactions"
 
     # for each transaction in last_month_transactions
