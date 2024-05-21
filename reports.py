@@ -13,7 +13,6 @@ def calculate_monthly_total() -> None:
 
     with open(TRANSACTION_FILE_NAME, "r") as file:
         transactions_list = file.readlines()
-        print(transactions_list)
 
     last_month_transactions = []
     for transaction in transactions_list:
