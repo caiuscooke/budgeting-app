@@ -13,6 +13,7 @@ def calculate_monthly_total() -> None:
 
     with open(TRANSACTION_FILE_NAME, "r") as file:
         transactions_list = file.readlines()
+        print(transactions_list)
 
     last_month_transactions = []
     for transaction in transactions_list:
@@ -34,7 +35,8 @@ def calculate_monthly_total() -> None:
     confirmation_line = f"=========you spent {total} from {first_day_last_month} to {last_day_last_month}========="
 
     print(confirmation_line)
-    if confirmation_line not in transactions_list: # ===> WRITE ANOTHER LINE
+    if (confirmation_line + "\n" not in transactions_list
+         or confirmation_line not in transactions_list): # ===> WRITE ANOTHER LINE
         with open(TRANSACTION_FILE_NAME, "a") as file:
             file.write(f"\n{confirmation_line}")
 
