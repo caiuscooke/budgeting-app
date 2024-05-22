@@ -1,4 +1,4 @@
-from core import TRANSACTION_FILE_NAME
+from core import TRANSACTION_FILE_NAME, read_file_contents
 from datetime import datetime, timedelta
 from string import ascii_letters
 
@@ -11,9 +11,8 @@ def calculate_monthly_total() -> None:
     first_day_last_month = first_day_current_month.replace(month=last_month_int)
     last_day_last_month = first_day_current_month - timedelta(days=1)
 
-    with open(TRANSACTION_FILE_NAME, "r") as file:
-        transactions_list = file.readlines()
-        print(transactions_list)
+    transactions_list = read_file_contents(TRANSACTION_FILE_NAME)
+    print(transactions_list)
 
     last_month_transactions = []
     for transaction in transactions_list:

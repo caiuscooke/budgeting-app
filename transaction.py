@@ -7,7 +7,7 @@ from file_manipulation import get_txt_lines
 from balances import calculate_balance
 from reports import *
 
-from core import TRANSACTION_FILE_NAME
+from core import TRANSACTION_FILE_NAME, read_file_contents
 
 class Transaction:
     def __init__(self, category: str, amount: str, time: str, date: str, venue: str):
@@ -55,10 +55,9 @@ def add_transaction():
 
 
 def view():
-    with open(TRANSACTION_FILE_NAME, "r") as file:
-        lines = file.readlines()
-        for line in lines:
-            print(line)
+    lines = read_file_contents(TRANSACTION_FILE_NAME)
+    for line in lines:
+        print(line)
 
 
 def display_transactions():
@@ -93,8 +92,8 @@ def delete_transaction():
         # uses a virtual cursor
         # reads line-end characters to go to the next line
 
-        with open(TRANSACTION_FILE_NAME, "r") as file:
-            lines = file.readlines()
+        
+        lines = read_file_contents(TRANSACTION_FILE_NAME)
         with open(TRANSACTION_FILE_NAME, "w") as file:
             for index in lines_to_delete_list:
                 del lines[int(index)]

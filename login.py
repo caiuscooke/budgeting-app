@@ -1,4 +1,5 @@
 from string import ascii_uppercase, ascii_lowercase
+from core import LOGIN_FILE_NAME, read_file_contents
 
 
 class User:
@@ -25,18 +26,16 @@ def create_user():
     if " " in username:
         return create_user()
     
-    # open the text file
-    with open("login.txt", "r") as file:
-        # read the textfile into a list (aka use readlines())
-        lines = file.readlines() # ["caiuscooke al;skdjf908234jlasdf"]
-        # for each item in that list
-        for each in lines:
-            # if username in each
-            if username in each:
-                # notify user that name is already taken
-                print("That username is already taken")
-                # recursively call the create_user function
-                return create_user()
+
+    lines = read_file_contents(LOGIN_FILE_NAME)
+
+    for each in lines:
+        # if username in each
+        if username in each:
+            # notify user that name is already taken
+            print("That username is already taken")
+            # recursively call the create_user function
+            return create_user()
             
     # list of accepted characters
     accepted_char_list = ["!", "#", "%", "&", "?", "@", "￥", "$"] 

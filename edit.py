@@ -4,6 +4,7 @@ from string import ascii_lowercase
 
 from file_manipulation import get_txt_lines
 from get_input import convert_input_to_datetime
+from core import TRANSACTION_FILE_NAME, read_file_contents
 
 
 def get_index_to_edit(transaction_split: list) -> int:
@@ -42,11 +43,7 @@ def edit_transaction():
     # because strings are finnicky, there could be one extra space and the rest
     # is entirely the same but the if statement would say it's false
 
-    # we did this to open the text file in order to interact with its info
-    with open("trans.txt", "r") as file:
-        # next we took the information from the text file and made it into a list
-        # to iterate over it and edit the transaction lines
-        transactions_list = file.readlines()
+    transactions_list = read_file_contents(TRANSACTION_FILE_NAME)
 
     # this for loop goes through the text file list and numbers the items by row
     for index, transaction in enumerate(transactions_list):

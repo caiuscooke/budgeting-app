@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from core import BALANCE_FILE_NAME
+from core import BALANCE_FILE_NAME, read_file_contents
 
 def convert_datetime(date: str, time: str) -> datetime:
     # 2024-04-01 00:00:00
@@ -9,8 +9,8 @@ def convert_datetime(date: str, time: str) -> datetime:
 
 def calculate_balance(date: str, time: str, amount: str):
 
-    with open(BALANCE_FILE_NAME, "r") as file:
-        last_balance = file.readlines()[-1]
+    
+    last_balance = read_file_contents(BALANCE_FILE_NAME)[-1]
     balance_list = last_balance.split()
 
     balance_amount = float(balance_list[-1])
