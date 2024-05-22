@@ -1,4 +1,4 @@
-import transaction
+import main_framework
 
 
 def main():
@@ -35,7 +35,7 @@ def main():
         for index, option in enumerate(options):
             if (int(choice) - 1) == index:
                 function_attribute = getattr(
-                    transaction, option_map.get(option))
+                    main_framework, option_map.get(option))
                 function_attribute()
 
 

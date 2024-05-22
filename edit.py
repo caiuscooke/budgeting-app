@@ -1,4 +1,3 @@
-# we had to import 2 functions from files and 2 moduels
 from datetime import datetime
 
 from core import TRANSACTION_FILE_NAME, read_file_contents
