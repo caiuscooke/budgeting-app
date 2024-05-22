@@ -1,13 +1,13 @@
 from datetime import datetime
 
-from get_input import *
-from edit import *
-from paycheck import *
-from file_manipulation import get_txt_lines
 from balances import calculate_balance
+from core import TRANSACTION_FILE_NAME, read_file_contents
+from edit import *
+from file_manipulation import get_txt_lines
+from get_input import *
+from paycheck import *
 from reports import *
 
-from core import TRANSACTION_FILE_NAME, read_file_contents
 
 class Transaction:
     def __init__(self, category: str, amount: str, time: str, date: str, venue: str):
@@ -49,7 +49,7 @@ def add_transaction():
         add_more = input("Would you like to add another transaction? [y/n]: ")
         if add_more.lower() == "y":
             add_transaction()
-    
+
     elif is_correct.lower() == "n":
         add_transaction()
 
@@ -92,7 +92,6 @@ def delete_transaction():
         # uses a virtual cursor
         # reads line-end characters to go to the next line
 
-        
         lines = read_file_contents(TRANSACTION_FILE_NAME)
         with open(TRANSACTION_FILE_NAME, "w") as file:
             for index in lines_to_delete_list:

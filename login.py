@@ -1,4 +1,5 @@
-from string import ascii_uppercase, ascii_lowercase
+from string import ascii_lowercase, ascii_uppercase
+
 from core import LOGIN_FILE_NAME, read_file_contents
 
 
@@ -22,10 +23,9 @@ def create_user():
 
     # ask for username
     print("Enter your username")
-    username = input() # asdf;lkajsdf
+    username = input()  # asdf;lkajsdf
     if " " in username:
         return create_user()
-    
 
     lines = read_file_contents(LOGIN_FILE_NAME)
 
@@ -36,9 +36,9 @@ def create_user():
             print("That username is already taken")
             # recursively call the create_user function
             return create_user()
-            
+
     # list of accepted characters
-    accepted_char_list = ["!", "#", "%", "&", "?", "@", "￥", "$"] 
+    accepted_char_list = ["!", "#", "%", "&", "?", "@", "￥", "$"]
     acceptable_num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     # print a statement of the requirements (one capital, one number, one special character)
     print(
@@ -55,8 +55,8 @@ def create_user():
         # for each in password
         has_capital, has_symbol, has_number, has_lower = False, False, False, False
 
-        for each in first_password: # 1L7xvb#09!
-            
+        for each in first_password:  # 1L7xvb#09!
+
             # if each is in a list of capital letters
             if each in ascii_uppercase:
                 # set a variable called has_capital to true
@@ -80,15 +80,15 @@ def create_user():
         confirmation_password = input("Enter your password again: ")
         passwords_match = confirmation_password == first_password
         password_len_ok = len(first_password) >= 8
-        password_ok = (has_capital 
-                       and has_symbol 
-                       and has_number 
-                       and has_lower 
-                       and password_len_ok 
+        password_ok = (has_capital
+                       and has_symbol
+                       and has_number
+                       and has_lower
+                       and password_len_ok
                        and passwords_match)
         if password_ok:
             # break
-            break 
+            break
         elif not password_ok:
             print("password NOT ok!")
             continue
@@ -98,5 +98,6 @@ def create_user():
     # call the save function on the new instance
     # return True
     pass
+
 
 create_user()

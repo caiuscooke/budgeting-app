@@ -1,7 +1,7 @@
-from get_input import get_amount, get_time, get_date
 from balances import calculate_balance
-
 from core import PAYCHECK_FILE_NAME
+from get_input import get_amount, get_date, get_time
+
 
 class Paycheck:
     def __init__(self, amount: str, time: str, date: str):
@@ -18,7 +18,7 @@ class Paycheck:
 def add_paycheck():
 
     print("Type in the information based on the prompt")
-    
+
     amount = get_amount()
     time = get_time()
     date = get_date()

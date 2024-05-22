@@ -1,10 +1,8 @@
 # we had to import 2 functions from files and 2 moduels
 from datetime import datetime
-from string import ascii_lowercase
 
-from file_manipulation import get_txt_lines
-from get_input import convert_input_to_datetime
 from core import TRANSACTION_FILE_NAME, read_file_contents
+from get_input import convert_input_to_datetime
 
 
 def get_index_to_edit(transaction_split: list) -> int:

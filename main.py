@@ -34,7 +34,8 @@ def main():
         choice = input()
         for index, option in enumerate(options):
             if (int(choice) - 1) == index:
-                function_attribute = getattr(transaction, option_map.get(option))
+                function_attribute = getattr(
+                    transaction, option_map.get(option))
                 function_attribute()
 
 
