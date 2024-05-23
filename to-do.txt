@@ -1,0 +1,27 @@
+Add an escape to the program using coroutines possibly
+
+Sort the transactions
+- if the user adds a transaction with a date older than the most recent entry, run this
+- after the user edits anything, run this function
+    - since were reading the txt file as a list
+    - use the date as the first item in each line
+    - use python's built in .sort() method on the list
+
+If the user edits an old transaction, 
+we need to make sure all the balances are updated accordingly
+
+add weekly and yearly spending report
+
+finish the login and create user functions
+
+categorizing expenditures (how much did you spend on groceries, etc.?)
+
+how much can you save/spend upcoming? 
+
+recurring bill checker 
+
+recalculate the balance
+- after the user edits anything (editing paychecks or transactions), run this function
+- after the user deletes anything, run this function
+
+remind the user to enter their paychecks if it's been X amount of days since the last was entered
