@@ -25,3 +25,5 @@ recalculate the balance
 - after the user deletes anything, run this function
 
 remind the user to enter their paychecks if it's been X amount of days since the last was entered
+
+organize the project tree
