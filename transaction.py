@@ -36,6 +36,7 @@ def add_transaction():
         new_transaction = Transaction(
             category, amount, time, date, venue
         )
+        ###
         new_transaction.save()
         print("The transaction has been saved.")
 
