@@ -19,7 +19,7 @@ def get_txt_lines(user_input_as_date: datetime):
         line_split = transaction.split()
         # split each transaction to index the date for each transaction
 
-        date = line_split[3]
+        date = line_split[0]
         # declare a variable for the date of the transaction
 
         transaction_date_as_datetime = datetime.strptime(date, "%Y-%m-%d")

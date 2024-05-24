@@ -1,7 +1,11 @@
-TRANSACTION_FILE_NAME = "transactions.txt"
-PAYCHECK_FILE_NAME = "paychecks.txt"
-BALANCE_FILE_NAME = "balances.txt"
-LOGIN_FILE_NAME = "login.txt"
+import os
+
+cwd = os.path.join(os.getcwd(), "budgeting-app")
+
+TRANSACTION_FILE_NAME = os.path.join(cwd, "transactions.txt")
+PAYCHECK_FILE_NAME = os.path.join(cwd, "paychecks.txt")
+BALANCE_FILE_NAME = os.path.join(cwd, "balances.txt")
+LOGIN_FILE_NAME = os.path.join(cwd, "login.txt")
 
 
 def read_file_contents(file_name: str) -> list:

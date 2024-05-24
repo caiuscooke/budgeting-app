@@ -29,7 +29,7 @@ def get_date_from_transaction(transaction: str) -> datetime:
     # next set the date index as a variable
     # then convert the date into a datetime object to compare to the userinput
     # check comment after line 9 for why
-    date_from_txt_file = transaction_as_list[3]
+    date_from_txt_file = transaction_as_list[0]
 
     return datetime.strptime(date_from_txt_file, "%Y-%m-%d")
 

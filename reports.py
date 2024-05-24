@@ -22,7 +22,7 @@ def calculate_monthly_total() -> None:
         if "=" in transaction:
             continue
 
-        transaction_date = transaction.split()[3]
+        transaction_date = transaction.split()[0]
         transaction_datetime = datetime.strptime(
             transaction_date, "%Y-%m-%d").date()
         if (first_day_last_month <= transaction_datetime
@@ -31,7 +31,7 @@ def calculate_monthly_total() -> None:
 
     total = 0
     for transaction in last_month_transactions:
-        amount = float(transaction.split()[1])
+        amount = float(transaction.split()[3])
         total += amount
 
     confirmation_line = f"=========you spent {total} from {first_day_last_month} to {last_day_last_month}========="

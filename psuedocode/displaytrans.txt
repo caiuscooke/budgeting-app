@@ -13,7 +13,7 @@ def display_transactions():
         transactions = file.readlines()
         for each in transactions:
             line_split = each.split()
-            date = line_split[3]
+            date = line_split[1]
             if transaction_date == date:
                 print(each)
 

@@ -16,7 +16,7 @@ class Transaction:
     def save(self):
         with open(TRANSACTION_FILE_NAME, "a") as file:
             file.write(
-                f"\n{self.category} {self.amount} {self.time} {self.date} {self.venue}")
+                f"\n{self.date} {self.time} {self.category} {self.amount} {self.venue}")
 
 
 def add_transaction():

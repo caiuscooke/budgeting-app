@@ -1,9 +1,10 @@
-groceries 200.00 14:26:00 2024-04-05 Kroger
-dining 20.00 23:20:00 2024-04-15 McDonalds
+2024-04-05 14:26:00 groceries 200.00 Kroger
+2024-04-15 23:20:00 dining 20.00 McDonalds
 =========you spent 220.0 from 2024-04-01 to 2024-04-30=========
-groceries 200.00 14:26:00 2024-04-18 Kroger
-dining 20.00 23:20:00 2024-04-12 McDonalds
-groceries 200.00 14:26:00 2024-04-05 Kroger
-dining 20.00 23:20:00 2024-04-05 McDonalds
-groceries 200.00 14:26:00 2024-04-16 Kroger
-dining 20.00 23:20:00 2024-04-11 McDonalds
+2024-04-18 14:26:00 groceries 200.00 Kroger
+2024-04-12 23:20:00 dining 20.00 McDonalds
+2024-04-05 14:26:00 groceries 200.00 Kroger
+2024-04-05 23:20:00 dining 20.00 McDonalds
+2024-04-16 14:26:00 groceries 200.00 Kroger
+2024-04-11 23:20:00 dining 20.00 McDonalds
+=========you spent 880.0 from 2024-04-01 to 2024-04-30=========
